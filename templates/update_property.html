@@ -1,0 +1,17 @@
+ 
+{% extends 'base.html' %}
+
+{% block title %}Update Property - Rentify{% endblock %}
+
+{% block content %}
+    <h1>Update Property</h1>
+    <form method="post">
+        {{ form.hidden_tag() }}
+        {{ form.location.label }}: {{ form.location() }}<br>
+        {{ form.area.label }}: {{ form.area() }}<br>
+        {{ form.bedrooms.label }}: {{ form.bedrooms() }}<br>
+        {{ form.bathrooms.label }}: {{ form.bathrooms() }}<br>
+        {{ form.amenities.label }}: {{ form.amenities() }}<br>
+        <button type="submit">Update</button>
+    </form>
+{% endblock %}

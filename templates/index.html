@@ -1,0 +1,20 @@
+ 
+{% extends 'base.html' %}
+
+{% block title %}Rentify - Rental Properties{% endblock %}
+
+{% block content %}
+    <h1>Rentify - Rental Properties</h1>
+    <ul>
+        {% for property in properties %}
+            <li>
+                <a href="{{ url_for('property', property_id=property.id) }}">
+                    {{ property.location }} - {{ property.bedrooms }} bedrooms
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+    {% if current_user.is_authenticated and current_user.user_type == 'seller' %}
+        <a href="{{ url_for('add_property') }}">Add Property</a>
+    {% endif %}
+{% endblock %}

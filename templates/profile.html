@@ -1,0 +1,13 @@
+ 
+{% extends 'base.html' %}
+
+{% block title %}Profile - Rentify{% endblock %}
+
+{% block content %}
+    <h1>Profile</h1>
+    <p>First Name: {{ current_user.first_name }}</p>
+    <p>Last Name: {{ current_user.last_name }}</p>
+    <p>Email: {{ current_user.email }}</p>
+    <p>Phone Number: {{ current_user.phone_number }}</p>
+    <p>User Type: {{ current_user.user_type }}</p>
+{% endblock %}
